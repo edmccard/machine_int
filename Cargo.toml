@@ -1,0 +1,10 @@
+[package]
+name = "machine_int"
+description = "std::num::Wrapping on steroids"
+version = "0.1.0"
+authors = ["Ed McCardell <edmccard@hotmail.com>"]
+homepage = "https://github.com/edmccard/machine_int"
+repository = "https://github.com/edmccard/machine_int"
+license = "MIT/Apache-2.0"
+
+[dependencies]
