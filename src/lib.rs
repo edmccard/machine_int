@@ -18,6 +18,7 @@ use std::ops::{
 };
 
 #[derive(Clone, Copy, Default)]
+#[repr(C)]
 pub struct MachineInt<T>(pub T);
 
 pub trait AsFrom<T>: Sized {
