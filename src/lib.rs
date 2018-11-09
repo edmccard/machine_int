@@ -214,6 +214,7 @@ macro_rules! misc_impl {
         impl Eq for MachineInt<$t> {}
 
         impl Ord for MachineInt<$t> {
+            #[inline]
             fn cmp(&self, rhs: &Self) -> Ordering {
                 self.0.cmp(&rhs.0)
             }
@@ -539,18 +540,21 @@ bit_impl!(u64, u32, u32; u64, u16, u16; u64, u8, u8;
 macro_rules! from_impl {
     ($lhs:ty, $rhs:ty) => {
         impl From<MachineInt<$rhs>> for MachineInt<$lhs> {
+            #[inline]
             fn from(val: MachineInt<$rhs>) -> Self {
                 MachineInt(val.0 as $lhs)
             }
         }
 
         impl From<$rhs> for MachineInt<$lhs> {
+            #[inline]
             fn from(val: $rhs) -> Self {
                 MachineInt(val as $lhs)
             }
         }
 
         impl From<MachineInt<$rhs>> for $lhs {
+            #[inline]
             fn from(val: MachineInt<$rhs>) -> Self {
                 val.0 as $lhs
             }
