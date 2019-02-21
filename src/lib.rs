@@ -573,6 +573,19 @@ from_impl!(i32, u16; i32, u8; i32, i16; i32, i8);
 from_impl!(u16, u8);
 from_impl!(i16, u8; i16, i8);
 
+#[cfg(target_pointer_width = "64")]
+from_impl!(usize, u64; usize, u32; usize, u16; usize, u8);
+#[cfg(target_pointer_width = "64")]
+from_impl!(isize, i64; isize, i32; isize, i16; isize, i8);
+#[cfg(target_pointer_width = "32")]
+from_impl!(usize, u32; usize, u16; usize, u8);
+#[cfg(target_pointer_width = "32")]
+from_impl!(isize, i32; isize, i16; isize, i8);
+#[cfg(target_pointer_width = "16")]
+from_impl!(usize, u16; usize, u8);
+#[cfg(target_pointer_width = "16")]
+from_impl!(isize, i16; isize, i8);
+
 macro_rules! as_from_impl {
     ($lhs:ty; $rhs:ty) => {
         impl AsFrom<MachineInt<$rhs>> for MachineInt<$lhs> {

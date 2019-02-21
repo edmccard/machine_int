@@ -1,7 +1,7 @@
 [package]
 name = "machine_int"
 description = "std::num::Wrapping on steroids"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["Ed McCardell <edmccard@hotmail.com>"]
 homepage = "https://github.com/edmccard/machine_int"
 repository = "https://github.com/edmccard/machine_int"
