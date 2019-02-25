@@ -653,3 +653,21 @@ impl<T: fmt::Octal> fmt::Octal for MachineInt<T> {
         fmt::Octal::fmt(&self.0, f)
     }
 }
+
+macro_rules! rotate_impl {
+    ($($t:ty)*) => ($(
+        impl MachineInt<$t> {
+            #[inline]
+            pub fn rotate_left(self, n: u32) -> Self {
+                MachineInt(self.0.rotate_left(n))
+            }
+
+            #[inline]
+            pub fn rotate_right(self, n: u32) -> Self {
+                MachineInt(self.0.rotate_right(n))
+            }
+        }
+    )*)
+}
+
+rotate_impl!(u8 u16 u32 u64);

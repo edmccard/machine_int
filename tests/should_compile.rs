@@ -216,6 +216,15 @@ fn main() {
     (v_i16 < v_u8, v_i16 < v_i8);
     (v_u8 < v_i16, v_i8 < v_i16);
 
+    v_u8.rotate_left(1);
+    v_u8.rotate_right(1);
+    v_u16.rotate_left(1);
+    v_u16.rotate_right(1);
+    v_u32.rotate_left(1);
+    v_u32.rotate_right(1);
+    v_u64.rotate_left(1);
+    v_u64.rotate_right(1);
+
     test_usize_isize();
 }
 
