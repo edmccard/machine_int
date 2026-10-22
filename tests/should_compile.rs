@@ -10,7 +10,8 @@ use machine_int::MachineInt;
 
 #[allow(unused_must_use, unused_assignments)]
 #[cfg_attr(rustfmt, rustfmt_skip)]
-fn main() {
+#[test]
+fn test_compile() {
     let mut v_i8 = MachineInt(0i8);
     let mut v_u8 = MachineInt(0u8);
     let mut v_i16 = MachineInt(0i16);
