@@ -6,8 +6,8 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-#![cfg_attr(feature = "cargo-clippy", feature(tool_lints))]
-#![cfg_attr(feature = "cargo-clippy", allow(clippy::cast_lossless))]
+#![allow(clippy::cast_lossless)]
+#![allow(clippy::non_canonical_partial_ord_impl)]
 
 use std::cmp::Ordering;
 use std::fmt;
@@ -92,19 +92,19 @@ macro_rules! lit_assign_impl {
     };
 }
 
-#[cfg_attr(rustfmt, rustfmt_skip)]
+#[rustfmt::skip]
 lit_assign_impl!(AddAssign, add_assign, wrapping_add,
                  i8, u8, i16, u16, i32, u32, i64, u64);
-#[cfg_attr(rustfmt, rustfmt_skip)]
+#[rustfmt::skip]
 lit_assign_impl!(SubAssign, sub_assign, wrapping_sub,
                  i8, u8, i16, u16, i32, u32, i64, u64);
-#[cfg_attr(rustfmt, rustfmt_skip)]
+#[rustfmt::skip]
 lit_assign_impl!(MulAssign, mul_assign, wrapping_mul,
                  i8, u8, i16, u16, i32, u32, i64, u64);
-#[cfg_attr(rustfmt, rustfmt_skip)]
+#[rustfmt::skip]
 lit_assign_impl!(DivAssign, div_assign, div,
                  i8, u8, i16, u16, i32, u32, i64, u64);
-#[cfg_attr(rustfmt, rustfmt_skip)]
+#[rustfmt::skip]
 lit_assign_impl!(RemAssign, rem_assign, rem,
                  i8, u8, i16, u16, i32, u32, i64, u64);
 lit_assign_impl!(BitAndAssign, bitand_assign, bitand, u8, u16, u32, u64);
@@ -180,13 +180,13 @@ macro_rules! ibit_lit_assign_impl {
     };
 }
 
-#[cfg_attr(rustfmt, rustfmt_skip)]
+#[rustfmt::skip]
 ibit_lit_assign_impl!(BitAndAssign, bitand_assign, bitand,
                       i64, u64, i32, u32, i16, u16, i8, u8);
-#[cfg_attr(rustfmt, rustfmt_skip)]
+#[rustfmt::skip]
 ibit_lit_assign_impl!(BitOrAssign, bitor_assign, bitor,
                       i64, u64, i32, u32, i16, u16, i8, u8);
-#[cfg_attr(rustfmt, rustfmt_skip)]
+#[rustfmt::skip]
 ibit_lit_assign_impl!(BitXorAssign, bitxor_assign, bitxor,
                       i64, u64, i32, u32, i16, u16, i8, u8);
 
@@ -371,16 +371,16 @@ macro_rules! icmp_impl {
 }
 
 // TODO: u64/ixx
-#[cfg_attr(rustfmt, rustfmt_skip)]
+#[rustfmt::skip]
 icmp_impl!(u32, i32, i64; i32, u32, i64;
            u32, i16, i64; i16, u32, i64;
            u32, i8, i64; i8, u32, i64);
-#[cfg_attr(rustfmt, rustfmt_skip)]
+#[rustfmt::skip]
 icmp_impl!(i32, u16, i32; u16, i32, i32;
            i32, u8, i32; u8, i32, i32;
            u16, i16, i32; i16, u16, i32;
            u16, i8, i32; i8, u16, i32);
-#[cfg_attr(rustfmt, rustfmt_skip)]
+#[rustfmt::skip]
 icmp_impl!(i16, u8, i16; u8, i16, i16;
            u8, i8, i16; i8, u8, i16);
 
@@ -439,7 +439,7 @@ macro_rules! add_impl {
     };
 }
 
-#[cfg_attr(rustfmt, rustfmt_skip)]
+#[rustfmt::skip]
 add_impl!(u64, u32; u64, u16; u64, u8; u64, i32; u64, i16; u64, i8;
           i64, u32; i64, u16; i64, u8; i64, i32; i64, i16; i64, i8;
           u32, u16; u32, u8; u32, i16; u32, i8;
@@ -525,7 +525,7 @@ macro_rules! bit_impl {
     };
 }
 
-#[cfg_attr(rustfmt, rustfmt_skip)]
+#[rustfmt::skip]
 bit_impl!(u64, u32, u32; u64, u16, u16; u64, u8, u8;
           u64, i32, u32; u64, i16, u16; u64, i8, u8;
           i64, u32, u32; i64, u16, u16; i64, u8, u8;
@@ -608,7 +608,7 @@ macro_rules! as_from_impl {
     };
 }
 
-#[cfg_attr(rustfmt, rustfmt_skip)]
+#[rustfmt::skip]
 as_from_impl!(u64; i64, u32, i32, u16, i16, u8, i8);
 as_from_impl!(i64; u64, u32, i32, u16, i16, u8, i8);
 as_from_impl!(u32; u64, i64, i32, u16, i16, u8, i8);
