@@ -5,6 +5,6 @@ version = "0.1.4"
 authors = ["Ed McCardell <edmccard@hotmail.com>"]
 repository = "https://github.com/edmccard/machine_int"
 license = "MIT/Apache-2.0"
-edition = "2018"
+edition = "2024"
 
 [dependencies]
