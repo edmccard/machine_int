@@ -1,6 +1,6 @@
 # machine_int
 
-`std::num::Wrapping` on steroids.
+Integer types that use wrapping arithmetic without requiring `Wrapping(...)`.
 
 ## License
 
